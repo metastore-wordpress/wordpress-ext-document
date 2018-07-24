@@ -2,14 +2,12 @@
 
 /**
  * Class WP_EXT_Document_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 class WP_EXT_Document_Taxonomy extends WP_EXT_Document {
 
 	/**
 	 * Constructor.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -18,8 +16,7 @@ class WP_EXT_Document_Taxonomy extends WP_EXT_Document {
 
 	/**
 	 * Plugin: `initialize`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function run() {
 		add_action( 'init', [ $this, 'taxonomy_meta' ], 0 );
 		add_action( 'init', [ $this, 'taxonomy_type' ], 0 );
@@ -27,8 +24,7 @@ class WP_EXT_Document_Taxonomy extends WP_EXT_Document {
 
 	/**
 	 * Taxonomy: `document_meta`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_meta() {
 		$labels  = [
 			'name'                       => _x( 'Document Meta', 'Meta General Name', 'wp-ext-' . $this->domain_ID ),
@@ -74,8 +70,7 @@ class WP_EXT_Document_Taxonomy extends WP_EXT_Document {
 
 	/**
 	 * Taxonomy: `document_type`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_type() {
 		$labels  = [
 			'name'                       => _x( 'Document Type', 'Type General Name', 'wp-ext-' . $this->domain_ID ),
@@ -124,8 +119,7 @@ class WP_EXT_Document_Taxonomy extends WP_EXT_Document {
  * Helper function to retrieve the static object without using globals.
  *
  * @return WP_EXT_Document_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 function WP_EXT_Document_Taxonomy() {
 	static $object;
 
@@ -138,6 +132,5 @@ function WP_EXT_Document_Taxonomy() {
 
 /**
  * Initialize the object on `plugins_loaded`.
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 add_action( 'plugins_loaded', [ WP_EXT_Document_Taxonomy(), 'run' ] );

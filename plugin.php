@@ -16,11 +16,9 @@
  * License:         GPLv3
  * License URI:     https://www.gnu.org/licenses/gpl-3.0.html
  */
-
 /**
  * Loading `WP_EXT_Document`.
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 function run_wp_ext_document() {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/WP_EXT_Document.class.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/WP_EXT_Document_Post_Type.class.php' );
